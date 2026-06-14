@@ -219,19 +219,19 @@
       </div>
     </div>
     <div class="lang-selector">
-      <button class="lang-btn" data-lang="ko">한국어</button>
       <button class="lang-btn" data-lang="en">EN</button>
-      <button class="lang-btn" data-lang="ja">日本語</button>
-      <button class="lang-btn" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="hi">हिन्दी</button>
       <button class="lang-btn" data-lang="es">ES</button>
       <button class="lang-btn" data-lang="pt">PT</button>
-      <button class="lang-btn" data-lang="hi">हिन्दी</button>
-      <button class="lang-btn" data-lang="ar">العربية</button>
-      <button class="lang-btn" data-lang="ru">RU</button>
-      <button class="lang-btn" data-lang="fr">FR</button>
-      <button class="lang-btn" data-lang="vi">VI</button>
       <button class="lang-btn" data-lang="id">ID</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="ar">العربية</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
       <button class="lang-btn" data-lang="de">DE</button>
+      <button class="lang-btn" data-lang="ja">日本語</button>
+      <button class="lang-btn" data-lang="vi">VI</button>
+      <button class="lang-btn" data-lang="ko">한국어</button>
     </div>
   </div>
 </header>
@@ -414,7 +414,7 @@
   });
 
   const saved = localStorage.getItem('yta-privacy-lang');
-  setLang(saved || detectLang());
+  setLang(saved !== null ? saved : detectLang());
 </script>
 
 </body>
