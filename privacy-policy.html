@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>개인정보처리방침 — YT Analyzer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e8e8e8;
+      --muted: #888;
+      --accent: #4ade80;
+      --accent-dim: rgba(74, 222, 128, 0.08);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+
+    header .inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    header span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .page-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .effective-date {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      color: #c8c8c8;
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin-bottom: 12px;
+    }
+
+    ul li {
+      color: #c8c8c8;
+      padding: 4px 0 4px 16px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: var(--accent-dim);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    th {
+      background: var(--surface);
+      color: var(--muted);
+      font-weight: 500;
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      color: #c8c8c8;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .page-title { font-size: 22px; }
+      table { font-size: 13px; }
+      th, td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="logo">📊</div>
+    <div>
+      <h1>YT Analyzer</h1>
+      <span>YouTube 채널 분석 크롬 확장</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1 class="page-title">개인정보처리방침</h1>
+  <p class="effective-date">시행일: 2026년 6월 14일 &nbsp;·&nbsp; 최종 수정: 2026년 6월 14일</p>
+
+  <div class="section">
+    <div class="highlight-box">
+      <p>YT Analyzer는 유저의 개인 식별 정보를 수집하지 않습니다. 수집하는 모든 데이터는 YouTube 공개 API를 통해 얻은 채널·영상 통계이며, 이를 분석 기능 제공 목적으로만 사용합니다.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>1. 수집하는 데이터</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>데이터 종류</th>
+          <th>수집 항목</th>
+          <th>수집 목적</th>
+          <th>보관 위치</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>YouTube 공개 데이터</td>
+          <td>채널명, 구독자 수, 영상 제목, 조회수, 좋아요 수, 댓글 수, 썸네일 URL, 업로드 일시</td>
+          <td>아웃라이어 분석, 조회수 추이 그래프 제공</td>
+          <td>Google Cloud Firestore (서버 캐시)</td>
+        </tr>
+        <tr>
+          <td>스냅샷 데이터</td>
+          <td>유저가 방문한 영상의 제목·썸네일·조회수 시점 기록</td>
+          <td>제목/썸네일 변경 감지 기능</td>
+          <td>유저 기기 로컬 (chrome.storage.local)</td>
+        </tr>
+        <tr>
+          <td>설정 데이터</td>
+          <td>내 채널 ID, 비교 채널 ID, Pro 활성화 여부, 라이선스 키</td>
+          <td>대시보드 기능, Pro 인증</td>
+          <td>유저 기기 로컬 (chrome.storage.sync)</td>
+        </tr>
+        <tr>
+          <td>라이선스 검증</td>
+          <td>Gumroad 라이선스 키 (유저가 직접 입력)</td>
+          <td>Pro 구독 유효성 확인</td>
+          <td>서버 (검증 결과만 24시간 캐싱)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>YouTube 공개 데이터는 YouTube Data API v3를 통해 수집되며, Google의 개인정보처리방침 및 서비스 약관을 따릅니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. 수집하지 않는 데이터</h2>
+    <ul>
+      <li>이름, 이메일 주소 등 개인 식별 정보</li>
+      <li>유저의 시청 기록 또는 검색 기록</li>
+      <li>위치 정보</li>
+      <li>결제 정보 (결제는 Gumroad에서 직접 처리, 당사는 라이선스 키만 수신)</li>
+      <li>YouTube 로그인 정보 또는 인증 토큰</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. 데이터 사용 목적</h2>
+    <ul>
+      <li>유튜브 영상 및 채널 아웃라이어 분석 결과 표시</li>
+      <li>조회수 시간 추이 그래프 데이터 수집 및 제공</li>
+      <li>썸네일·제목 변경 이력 추적 (유저가 방문한 영상에 한함)</li>
+      <li>Pro 라이선스 유효성 검증</li>
+      <li>서버 캐싱을 통한 응답 속도 개선 및 YouTube API 호출 최소화</li>
+    </ul>
+    <p>수집된 데이터는 위 목적 외의 용도로 사용하지 않으며, 제3자에게 판매하거나 광고 목적으로 사용하지 않습니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>4. 데이터 보관 및 보안</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>데이터</th>
+          <th>보관 위치</th>
+          <th>보관 기간</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>채널·영상 통계 캐시</td>
+          <td>Google Cloud Firestore</td>
+          <td>최대 6시간 (자동 갱신)</td>
+        </tr>
+        <tr>
+          <td>조회수 추이 기록</td>
+          <td>Google Cloud Firestore</td>
+          <td>등록 후 최대 90일</td>
+        </tr>
+        <tr>
+          <td>라이선스 검증 캐시</td>
+          <td>Google Cloud Firestore</td>
+          <td>24시간</td>
+        </tr>
+        <tr>
+          <td>스냅샷 기록</td>
+          <td>유저 기기</td>
+          <td>영상당 최대 10개, 전체 2MB 한도</td>
+        </tr>
+        <tr>
+          <td>설정 데이터</td>
+          <td>유저 기기</td>
+          <td>유저가 삭제하거나 확장 제거 시까지</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>서버는 Google Cloud Platform(asia-northeast3, 서울 리전)에서 운영되며, 전송 중 데이터는 HTTPS/TLS로 암호화됩니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>5. 제3자 서비스</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>서비스</th>
+          <th>용도</th>
+          <th>개인정보처리방침</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>YouTube Data API v3 (Google)</td>
+          <td>채널·영상 공개 통계 조회</td>
+          <td><a href="https://policies.google.com/privacy" style="color:#4ade80">policies.google.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td>Google Cloud Firestore</td>
+          <td>서버 캐시 및 데이터 저장</td>
+          <td><a href="https://cloud.google.com/privacy" style="color:#4ade80">cloud.google.com/privacy</a></td>
+        </tr>
+        <tr>
+          <td>Gumroad</td>
+          <td>Pro 구독 결제 및 라이선스 키 발급</td>
+          <td><a href="https://gumroad.com/privacy" style="color:#4ade80">gumroad.com/privacy</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>6. 유저의 권리</h2>
+    <p>유저는 다음 권리를 행사할 수 있습니다:</p>
+    <ul>
+      <li><strong>삭제 요청</strong>: 서버에 저장된 특정 채널·영상 데이터 삭제 요청</li>
+      <li><strong>로컬 데이터 삭제</strong>: 크롬 확장 제거 시 기기 내 모든 데이터 자동 삭제. 또는 확장 popup → 설정에서 수동 삭제 가능</li>
+      <li><strong>Pro 비활성화</strong>: 언제든지 popup 설정에서 라이선스 비활성화 가능</li>
+    </ul>
+    <p>삭제 요청 또는 문의는 아래 연락처로 보내주세요. 요청 접수 후 7일 이내 처리합니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>7. 어린이 개인정보</h2>
+    <p>YT Analyzer는 13세 미만 어린이를 대상으로 하지 않으며, 어린이의 개인정보를 의도적으로 수집하지 않습니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. 국제 데이터 이전</h2>
+    <p>서버는 대한민국 서울(Google Cloud asia-northeast3)에 위치하며, YouTube API 호출은 Google의 글로벌 인프라를 경유합니다. 유럽경제지역(EEA) 유저의 데이터는 Google의 표준계약조항(SCC)에 의거해 보호됩니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. 방침 변경</h2>
+    <p>본 방침이 변경될 경우 이 페이지에 개정 내용을 게시하고 시행일을 상단에 표시합니다. 중요한 변경이 있을 경우 크롬 웹스토어 업데이트 노트를 통해 별도 안내합니다.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. 문의</h2>
+    <div class="contact-box">
+      <p>개인정보 관련 문의, 데이터 삭제 요청, 기타 사항은 아래로 연락해 주세요.</p>
+      <br>
+      <p>이메일: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p>
+      <p>응답 기간: 영업일 기준 3~5일 이내</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 YT Analyzer &nbsp;·&nbsp; 본 방침은 크롬 웹스토어 정책, GDPR, 개인정보 보호법을 준수합니다
+</footer>
+
+</body>
+</html>
