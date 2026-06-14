@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>개인정보처리방침 — YT Analyzer</title>
+  <title>Privacy Policy — YT Analyzer</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -37,6 +37,13 @@
       padding: 0 24px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
       gap: 12px;
     }
 
@@ -63,6 +70,30 @@
       font-size: 13px;
     }
 
+    .lang-selector {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .lang-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .lang-btn:hover, .lang-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
     main {
       max-width: 720px;
       margin: 0 auto;
@@ -82,9 +113,7 @@
       margin-bottom: 40px;
     }
 
-    .section {
-      margin-bottom: 40px;
-    }
+    .section { margin-bottom: 40px; }
 
     h2 {
       font-size: 16px;
@@ -95,24 +124,15 @@
       border-bottom: 1px solid var(--border);
     }
 
-    p {
-      color: #c8c8c8;
-      margin-bottom: 12px;
-    }
-
+    p { color: #c8c8c8; margin-bottom: 12px; }
     p:last-child { margin-bottom: 0; }
 
-    ul {
-      list-style: none;
-      margin-bottom: 12px;
-    }
-
+    ul { list-style: none; margin-bottom: 12px; }
     ul li {
       color: #c8c8c8;
       padding: 4px 0 4px 16px;
       position: relative;
     }
-
     ul li::before {
       content: '·';
       position: absolute;
@@ -128,11 +148,7 @@
       padding: 16px 20px;
       margin-bottom: 16px;
     }
-
-    .highlight-box p {
-      margin: 0;
-      font-size: 14px;
-    }
+    .highlight-box p { margin: 0; font-size: 14px; }
 
     table {
       width: 100%;
@@ -140,7 +156,6 @@
       margin-bottom: 12px;
       font-size: 14px;
     }
-
     th {
       background: var(--surface);
       color: var(--muted);
@@ -152,17 +167,13 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
-
     td {
       padding: 10px 14px;
       border: 1px solid var(--border);
       color: #c8c8c8;
       vertical-align: top;
     }
-
-    tr:nth-child(even) td {
-      background: rgba(255,255,255,0.02);
-    }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
 
     .contact-box {
       background: var(--surface);
@@ -170,15 +181,11 @@
       border-radius: 10px;
       padding: 20px 24px;
     }
+    .contact-box a { color: var(--accent); text-decoration: none; }
+    .contact-box a:hover { text-decoration: underline; }
 
-    .contact-box a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .contact-box a:hover {
-      text-decoration: underline;
-    }
+    td a { color: var(--accent); text-decoration: none; }
+    td a:hover { text-decoration: underline; }
 
     footer {
       border-top: 1px solid var(--border);
@@ -188,10 +195,15 @@
       font-size: 13px;
     }
 
+    .lang-content { display: none; }
+    .lang-content.active { display: block; }
+
     @media (max-width: 600px) {
       .page-title { font-size: 22px; }
       table { font-size: 13px; }
       th, td { padding: 8px 10px; }
+      .lang-selector { gap: 4px; }
+      .lang-btn { font-size: 11px; padding: 3px 8px; }
     }
   </style>
 </head>
@@ -199,200 +211,211 @@
 
 <header>
   <div class="inner">
-    <div class="logo">📊</div>
-    <div>
-      <h1>YT Analyzer</h1>
-      <span>YouTube 채널 분석 크롬 확장</span>
+    <div class="header-left">
+      <div class="logo">📊</div>
+      <div>
+        <h1>YT Analyzer</h1>
+        <span>YouTube Analytics Extension</span>
+      </div>
+    </div>
+    <div class="lang-selector">
+      <button class="lang-btn" data-lang="ko">한국어</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ja">日本語</button>
+      <button class="lang-btn" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="pt">PT</button>
+      <button class="lang-btn" data-lang="hi">हिन्दी</button>
+      <button class="lang-btn" data-lang="ar">العربية</button>
+      <button class="lang-btn" data-lang="ru">RU</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="vi">VI</button>
+      <button class="lang-btn" data-lang="id">ID</button>
+      <button class="lang-btn" data-lang="de">DE</button>
     </div>
   </div>
 </header>
 
 <main>
+
+<!-- 한국어 -->
+<div class="lang-content" id="lang-ko">
   <h1 class="page-title">개인정보처리방침</h1>
-  <p class="effective-date">시행일: 2026년 6월 14일 &nbsp;·&nbsp; 최종 수정: 2026년 6월 14일</p>
+  <p class="effective-date">시행일: 2026년 6월 14일</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer는 유저의 개인 식별 정보를 수집하지 않습니다. 수집하는 모든 데이터는 YouTube 공개 API를 통해 얻은 채널·영상 통계이며, 분석 기능 제공 목적으로만 사용합니다.</p></div></div>
+  <div class="section"><h2>1. 수집하는 데이터</h2><table><thead><tr><th>데이터 종류</th><th>수집 항목</th><th>목적</th><th>보관</th></tr></thead><tbody><tr><td>YouTube 공개 데이터</td><td>채널명, 구독자 수, 영상 제목, 조회수, 좋아요 수, 댓글 수, 썸네일, 업로드 일시</td><td>아웃라이어 분석, 조회수 추이 그래프</td><td>Firestore 서버</td></tr><tr><td>스냅샷 데이터</td><td>방문한 영상의 제목·썸네일·조회수 시점 기록</td><td>제목/썸네일 변경 감지</td><td>기기 로컬</td></tr><tr><td>설정 데이터</td><td>내 채널 ID, 비교 채널 ID, Pro 여부, 라이선스 키</td><td>대시보드, Pro 인증</td><td>기기 로컬</td></tr><tr><td>라이선스 검증</td><td>Gumroad 라이선스 키 (유저 직접 입력)</td><td>Pro 구독 확인</td><td>24시간 캐시</td></tr></tbody></table></div>
+  <div class="section"><h2>2. 수집하지 않는 데이터</h2><ul><li>이름, 이메일 등 개인 식별 정보</li><li>시청 기록 또는 검색 기록</li><li>위치 정보</li><li>결제 정보 (Gumroad에서 직접 처리)</li><li>YouTube 로그인 정보 또는 인증 토큰</li></ul></div>
+  <div class="section"><h2>3. 제3자 서비스</h2><table><thead><tr><th>서비스</th><th>용도</th><th>방침</th></tr></thead><tbody><tr><td>YouTube Data API (Google)</td><td>채널·영상 통계 조회</td><td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td></tr><tr><td>Google Cloud Firestore</td><td>서버 캐시 저장</td><td><a href="https://cloud.google.com/privacy">cloud.google.com/privacy</a></td></tr><tr><td>Gumroad</td><td>Pro 결제 및 라이선스 발급</td><td><a href="https://gumroad.com/privacy">gumroad.com/privacy</a></td></tr></tbody></table></div>
+  <div class="section"><h2>4. 데이터 보관 기간</h2><ul><li>채널·영상 통계 캐시: 최대 6시간</li><li>조회수 추이 기록: 등록 후 최대 90일</li><li>라이선스 검증 캐시: 24시간</li><li>기기 로컬 데이터: 확장 제거 시 자동 삭제</li></ul></div>
+  <div class="section"><h2>5. 유저의 권리</h2><ul><li>서버 데이터 삭제 요청 가능</li><li>확장 제거 시 기기 내 모든 데이터 자동 삭제</li><li>언제든지 Pro 비활성화 가능</li></ul></div>
+  <div class="section"><h2>6. 문의</h2><div class="contact-box"><p>이메일: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>응답 기간: 영업일 기준 3~5일</p></div></div>
+</div>
 
-  <div class="section">
-    <div class="highlight-box">
-      <p>YT Analyzer는 유저의 개인 식별 정보를 수집하지 않습니다. 수집하는 모든 데이터는 YouTube 공개 API를 통해 얻은 채널·영상 통계이며, 이를 분석 기능 제공 목적으로만 사용합니다.</p>
-    </div>
-  </div>
+<!-- English -->
+<div class="lang-content" id="lang-en">
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="effective-date">Effective Date: June 14, 2026</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer does not collect personally identifiable information. All data collected consists of publicly available YouTube channel and video statistics, used solely to provide analytics features.</p></div></div>
+  <div class="section"><h2>1. Data We Collect</h2><table><thead><tr><th>Type</th><th>Items</th><th>Purpose</th><th>Storage</th></tr></thead><tbody><tr><td>YouTube Public Data</td><td>Channel name, subscribers, video title, views, likes, comments, thumbnails, upload date</td><td>Outlier analysis, views graph</td><td>Firestore server</td></tr><tr><td>Snapshot Data</td><td>Title, thumbnail, view count at time of visit</td><td>Title/thumbnail change tracking</td><td>Local device</td></tr><tr><td>Settings Data</td><td>My channel ID, compare channel IDs, Pro status, license key</td><td>Dashboard, Pro auth</td><td>Local device</td></tr><tr><td>License Verification</td><td>Gumroad license key (user-entered)</td><td>Pro subscription check</td><td>24h cache</td></tr></tbody></table></div>
+  <div class="section"><h2>2. Data We Do NOT Collect</h2><ul><li>Name, email, or other personally identifiable information</li><li>Browsing or watch history</li><li>Location data</li><li>Payment information (handled directly by Gumroad)</li><li>YouTube login credentials or auth tokens</li></ul></div>
+  <div class="section"><h2>3. Third-Party Services</h2><table><thead><tr><th>Service</th><th>Purpose</th><th>Privacy Policy</th></tr></thead><tbody><tr><td>YouTube Data API (Google)</td><td>Fetch channel & video stats</td><td><a href="https://policies.google.com/privacy">policies.google.com/privacy</a></td></tr><tr><td>Google Cloud Firestore</td><td>Server-side caching</td><td><a href="https://cloud.google.com/privacy">cloud.google.com/privacy</a></td></tr><tr><td>Gumroad</td><td>Pro subscription payments & license keys</td><td><a href="https://gumroad.com/privacy">gumroad.com/privacy</a></td></tr></tbody></table></div>
+  <div class="section"><h2>4. Data Retention</h2><ul><li>Channel/video stats cache: up to 6 hours</li><li>Views history: up to 90 days after registration</li><li>License verification cache: 24 hours</li><li>Local device data: deleted automatically when extension is removed</li></ul></div>
+  <div class="section"><h2>5. Your Rights</h2><ul><li>Request deletion of server-stored data</li><li>All local data deleted automatically upon extension removal</li><li>Deactivate Pro at any time via extension settings</li></ul></div>
+  <div class="section"><h2>6. Contact</h2><div class="contact-box"><p>Email: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>Response time: 3–5 business days</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>1. 수집하는 데이터</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>데이터 종류</th>
-          <th>수집 항목</th>
-          <th>수집 목적</th>
-          <th>보관 위치</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>YouTube 공개 데이터</td>
-          <td>채널명, 구독자 수, 영상 제목, 조회수, 좋아요 수, 댓글 수, 썸네일 URL, 업로드 일시</td>
-          <td>아웃라이어 분석, 조회수 추이 그래프 제공</td>
-          <td>Google Cloud Firestore (서버 캐시)</td>
-        </tr>
-        <tr>
-          <td>스냅샷 데이터</td>
-          <td>유저가 방문한 영상의 제목·썸네일·조회수 시점 기록</td>
-          <td>제목/썸네일 변경 감지 기능</td>
-          <td>유저 기기 로컬 (chrome.storage.local)</td>
-        </tr>
-        <tr>
-          <td>설정 데이터</td>
-          <td>내 채널 ID, 비교 채널 ID, Pro 활성화 여부, 라이선스 키</td>
-          <td>대시보드 기능, Pro 인증</td>
-          <td>유저 기기 로컬 (chrome.storage.sync)</td>
-        </tr>
-        <tr>
-          <td>라이선스 검증</td>
-          <td>Gumroad 라이선스 키 (유저가 직접 입력)</td>
-          <td>Pro 구독 유효성 확인</td>
-          <td>서버 (검증 결과만 24시간 캐싱)</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>YouTube 공개 데이터는 YouTube Data API v3를 통해 수집되며, Google의 개인정보처리방침 및 서비스 약관을 따릅니다.</p>
-  </div>
+<!-- 日本語 -->
+<div class="lang-content" id="lang-ja">
+  <h1 class="page-title">プライバシーポリシー</h1>
+  <p class="effective-date">施行日: 2026年6月14日</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzerは個人を特定できる情報を収集しません。収集するデータはすべてYouTubeの公開APIから取得したチャンネル・動画の統計情報であり、分析機能の提供のみに使用します。</p></div></div>
+  <div class="section"><h2>1. 収集するデータ</h2><ul><li>YouTubeの公開データ: チャンネル名、登録者数、動画タイトル、再生数、高評価数、コメント数、サムネイル、アップロード日時</li><li>スナップショットデータ: 訪問した動画のタイトル・サムネイル・再生数の記録</li><li>設定データ: マイチャンネルID、比較チャンネルID、Proステータス、ライセンスキー</li><li>ライセンス認証: GumroadライセンスキーはProサブスクリプションの確認にのみ使用</li></ul></div>
+  <div class="section"><h2>2. 収集しないデータ</h2><ul><li>氏名、メールアドレスなどの個人情報</li><li>視聴履歴または検索履歴</li><li>位置情報</li><li>決済情報（Gumroadが直接処理）</li><li>YouTubeのログイン情報</li></ul></div>
+  <div class="section"><h2>3. お問い合わせ</h2><div class="contact-box"><p>メール: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>返答期間: 営業日3〜5日以内</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>2. 수집하지 않는 데이터</h2>
-    <ul>
-      <li>이름, 이메일 주소 등 개인 식별 정보</li>
-      <li>유저의 시청 기록 또는 검색 기록</li>
-      <li>위치 정보</li>
-      <li>결제 정보 (결제는 Gumroad에서 직접 처리, 당사는 라이선스 키만 수신)</li>
-      <li>YouTube 로그인 정보 또는 인증 토큰</li>
-    </ul>
-  </div>
+<!-- 中文 -->
+<div class="lang-content" id="lang-zh">
+  <h1 class="page-title">隐私政策</h1>
+  <p class="effective-date">生效日期：2026年6月14日</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer不收集任何可识别个人身份的信息。我们收集的所有数据均来自YouTube公开API的频道和视频统计信息，仅用于提供分析功能。</p></div></div>
+  <div class="section"><h2>1. 我们收集的数据</h2><ul><li>YouTube公开数据：频道名称、订阅者数、视频标题、播放量、点赞数、评论数、缩略图、上传日期</li><li>快照数据：访问视频时的标题、缩略图、播放量记录</li><li>设置数据：我的频道ID、对比频道ID、Pro状态、许可证密钥</li><li>许可证验证：Gumroad许可证密钥（用户自行输入）</li></ul></div>
+  <div class="section"><h2>2. 我们不收集的数据</h2><ul><li>姓名、电子邮件等个人身份信息</li><li>观看记录或搜索记录</li><li>位置信息</li><li>支付信息（由Gumroad直接处理）</li><li>YouTube登录凭据</li></ul></div>
+  <div class="section"><h2>3. 联系我们</h2><div class="contact-box"><p>邮箱：<a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>响应时间：3–5个工作日</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>3. 데이터 사용 목적</h2>
-    <ul>
-      <li>유튜브 영상 및 채널 아웃라이어 분석 결과 표시</li>
-      <li>조회수 시간 추이 그래프 데이터 수집 및 제공</li>
-      <li>썸네일·제목 변경 이력 추적 (유저가 방문한 영상에 한함)</li>
-      <li>Pro 라이선스 유효성 검증</li>
-      <li>서버 캐싱을 통한 응답 속도 개선 및 YouTube API 호출 최소화</li>
-    </ul>
-    <p>수집된 데이터는 위 목적 외의 용도로 사용하지 않으며, 제3자에게 판매하거나 광고 목적으로 사용하지 않습니다.</p>
-  </div>
+<!-- Español -->
+<div class="lang-content" id="lang-es">
+  <h1 class="page-title">Política de Privacidad</h1>
+  <p class="effective-date">Fecha de vigencia: 14 de junio de 2026</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer no recopila información de identificación personal. Todos los datos recopilados son estadísticas públicas de canales y videos de YouTube, utilizadas únicamente para proporcionar funciones de análisis.</p></div></div>
+  <div class="section"><h2>1. Datos que recopilamos</h2><ul><li>Datos públicos de YouTube: nombre del canal, suscriptores, título del video, vistas, likes, comentarios, miniaturas, fecha de subida</li><li>Datos de instantánea: título, miniatura y recuento de vistas en el momento de la visita</li><li>Datos de configuración: ID de mi canal, IDs de canales comparados, estado Pro, clave de licencia</li><li>Verificación de licencia: clave de licencia de Gumroad (ingresada por el usuario)</li></ul></div>
+  <div class="section"><h2>2. Datos que NO recopilamos</h2><ul><li>Nombre, correo electrónico u otra información de identificación personal</li><li>Historial de visualización o búsqueda</li><li>Datos de ubicación</li><li>Información de pago (gestionada directamente por Gumroad)</li><li>Credenciales de inicio de sesión de YouTube</li></ul></div>
+  <div class="section"><h2>3. Contacto</h2><div class="contact-box"><p>Email: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>Tiempo de respuesta: 3–5 días hábiles</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>4. 데이터 보관 및 보안</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>데이터</th>
-          <th>보관 위치</th>
-          <th>보관 기간</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>채널·영상 통계 캐시</td>
-          <td>Google Cloud Firestore</td>
-          <td>최대 6시간 (자동 갱신)</td>
-        </tr>
-        <tr>
-          <td>조회수 추이 기록</td>
-          <td>Google Cloud Firestore</td>
-          <td>등록 후 최대 90일</td>
-        </tr>
-        <tr>
-          <td>라이선스 검증 캐시</td>
-          <td>Google Cloud Firestore</td>
-          <td>24시간</td>
-        </tr>
-        <tr>
-          <td>스냅샷 기록</td>
-          <td>유저 기기</td>
-          <td>영상당 최대 10개, 전체 2MB 한도</td>
-        </tr>
-        <tr>
-          <td>설정 데이터</td>
-          <td>유저 기기</td>
-          <td>유저가 삭제하거나 확장 제거 시까지</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>서버는 Google Cloud Platform(asia-northeast3, 서울 리전)에서 운영되며, 전송 중 데이터는 HTTPS/TLS로 암호화됩니다.</p>
-  </div>
+<!-- Português -->
+<div class="lang-content" id="lang-pt">
+  <h1 class="page-title">Política de Privacidade</h1>
+  <p class="effective-date">Data de vigência: 14 de junho de 2026</p>
+  <div class="section"><div class="highlight-box"><p>O YT Analyzer não coleta informações de identificação pessoal. Todos os dados coletados são estatísticas públicas de canais e vídeos do YouTube, usadas apenas para fornecer recursos de análise.</p></div></div>
+  <div class="section"><h2>1. Dados que coletamos</h2><ul><li>Dados públicos do YouTube: nome do canal, inscritos, título do vídeo, visualizações, curtidas, comentários, miniaturas, data de upload</li><li>Dados de snapshot: título, miniatura e contagem de visualizações no momento da visita</li><li>Dados de configuração: ID do meu canal, IDs de canais comparados, status Pro, chave de licença</li><li>Verificação de licença: chave de licença do Gumroad (inserida pelo usuário)</li></ul></div>
+  <div class="section"><h2>2. Dados que NÃO coletamos</h2><ul><li>Nome, e-mail ou outras informações de identificação pessoal</li><li>Histórico de visualização ou pesquisa</li><li>Dados de localização</li><li>Informações de pagamento (processadas diretamente pelo Gumroad)</li><li>Credenciais de login do YouTube</li></ul></div>
+  <div class="section"><h2>3. Contato</h2><div class="contact-box"><p>E-mail: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>Tempo de resposta: 3–5 dias úteis</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>5. 제3자 서비스</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>서비스</th>
-          <th>용도</th>
-          <th>개인정보처리방침</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>YouTube Data API v3 (Google)</td>
-          <td>채널·영상 공개 통계 조회</td>
-          <td><a href="https://policies.google.com/privacy" style="color:#4ade80">policies.google.com/privacy</a></td>
-        </tr>
-        <tr>
-          <td>Google Cloud Firestore</td>
-          <td>서버 캐시 및 데이터 저장</td>
-          <td><a href="https://cloud.google.com/privacy" style="color:#4ade80">cloud.google.com/privacy</a></td>
-        </tr>
-        <tr>
-          <td>Gumroad</td>
-          <td>Pro 구독 결제 및 라이선스 키 발급</td>
-          <td><a href="https://gumroad.com/privacy" style="color:#4ade80">gumroad.com/privacy</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<!-- हिन्दी -->
+<div class="lang-content" id="lang-hi">
+  <h1 class="page-title">गोपनीयता नीति</h1>
+  <p class="effective-date">प्रभावी तिथि: 14 जून 2026</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer व्यक्तिगत पहचान योग्य जानकारी एकत्र नहीं करता। सभी एकत्रित डेटा YouTube के सार्वजनिक API से प्राप्त चैनल और वीडियो आँकड़े हैं, जिनका उपयोग केवल विश्लेषण सुविधाएँ प्रदान करने के लिए किया जाता है।</p></div></div>
+  <div class="section"><h2>1. हम जो डेटा एकत्र करते हैं</h2><ul><li>YouTube सार्वजनिक डेटा: चैनल नाम, सब्सक्राइबर, वीडियो शीर्षक, व्यूज़, लाइक्स, टिप्पणियाँ, थंबनेल, अपलोड तिथि</li><li>स्नैपशॉट डेटा: विज़िट के समय शीर्षक, थंबनेल और व्यूज़ काउंट का रिकॉर्ड</li><li>सेटिंग्स डेटा: मेरा चैनल ID, तुलना चैनल IDs, Pro स्थिति, लाइसेंस कुंजी</li></ul></div>
+  <div class="section"><h2>2. संपर्क</h2><div class="contact-box"><p>ईमेल: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>प्रतिक्रिया समय: 3–5 कार्य दिवस</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>6. 유저의 권리</h2>
-    <p>유저는 다음 권리를 행사할 수 있습니다:</p>
-    <ul>
-      <li><strong>삭제 요청</strong>: 서버에 저장된 특정 채널·영상 데이터 삭제 요청</li>
-      <li><strong>로컬 데이터 삭제</strong>: 크롬 확장 제거 시 기기 내 모든 데이터 자동 삭제. 또는 확장 popup → 설정에서 수동 삭제 가능</li>
-      <li><strong>Pro 비활성화</strong>: 언제든지 popup 설정에서 라이선스 비활성화 가능</li>
-    </ul>
-    <p>삭제 요청 또는 문의는 아래 연락처로 보내주세요. 요청 접수 후 7일 이내 처리합니다.</p>
-  </div>
+<!-- العربية -->
+<div class="lang-content" id="lang-ar">
+  <h1 class="page-title">سياسة الخصوصية</h1>
+  <p class="effective-date">تاريخ النفاذ: 14 يونيو 2026</p>
+  <div class="section"><div class="highlight-box"><p>لا يجمع YT Analyzer أي معلومات شخصية. جميع البيانات المجمعة هي إحصائيات عامة للقنوات والمقاطع من YouTube API، وتُستخدم فقط لتوفير ميزات التحليل.</p></div></div>
+  <div class="section"><h2>١. البيانات التي نجمعها</h2><ul><li>بيانات YouTube العامة: اسم القناة، المشتركون، عنوان الفيديو، المشاهدات، الإعجابات، التعليقات، الصور المصغرة، تاريخ الرفع</li><li>بيانات اللقطة: العنوان والصورة المصغرة وعدد المشاهدات وقت الزيارة</li><li>بيانات الإعدادات: معرف قناتي، معرفات القنوات المقارنة، حالة Pro، مفتاح الترخيص</li></ul></div>
+  <div class="section"><h2>٢. التواصل</h2><div class="contact-box"><p>البريد الإلكتروني: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>وقت الاستجابة: 3–5 أيام عمل</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>7. 어린이 개인정보</h2>
-    <p>YT Analyzer는 13세 미만 어린이를 대상으로 하지 않으며, 어린이의 개인정보를 의도적으로 수집하지 않습니다.</p>
-  </div>
+<!-- Русский -->
+<div class="lang-content" id="lang-ru">
+  <h1 class="page-title">Политика конфиденциальности</h1>
+  <p class="effective-date">Дата вступления в силу: 14 июня 2026 г.</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer не собирает персональные данные. Все собираемые данные — это общедоступная статистика каналов и видео YouTube, используемая исключительно для аналитических функций.</p></div></div>
+  <div class="section"><h2>1. Данные, которые мы собираем</h2><ul><li>Публичные данные YouTube: название канала, подписчики, название видео, просмотры, лайки, комментарии, миниатюры, дата загрузки</li><li>Данные снимков: название, миниатюра и количество просмотров на момент посещения</li><li>Данные настроек: ID моего канала, ID сравниваемых каналов, статус Pro, ключ лицензии</li></ul></div>
+  <div class="section"><h2>2. Контакты</h2><div class="contact-box"><p>Email: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>Время ответа: 3–5 рабочих дней</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>8. 국제 데이터 이전</h2>
-    <p>서버는 대한민국 서울(Google Cloud asia-northeast3)에 위치하며, YouTube API 호출은 Google의 글로벌 인프라를 경유합니다. 유럽경제지역(EEA) 유저의 데이터는 Google의 표준계약조항(SCC)에 의거해 보호됩니다.</p>
-  </div>
+<!-- Français -->
+<div class="lang-content" id="lang-fr">
+  <h1 class="page-title">Politique de Confidentialité</h1>
+  <p class="effective-date">Date d'entrée en vigueur : 14 juin 2026</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer ne collecte aucune information personnellement identifiable. Toutes les données collectées sont des statistiques publiques de chaînes et vidéos YouTube, utilisées uniquement pour fournir des fonctionnalités d'analyse.</p></div></div>
+  <div class="section"><h2>1. Données collectées</h2><ul><li>Données publiques YouTube : nom de la chaîne, abonnés, titre de la vidéo, vues, likes, commentaires, miniatures, date de mise en ligne</li><li>Données d'instantané : titre, miniature et nombre de vues au moment de la visite</li><li>Données de paramètres : ID de ma chaîne, IDs des chaînes comparées, statut Pro, clé de licence</li></ul></div>
+  <div class="section"><h2>2. Contact</h2><div class="contact-box"><p>Email : <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>Délai de réponse : 3 à 5 jours ouvrés</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>9. 방침 변경</h2>
-    <p>본 방침이 변경될 경우 이 페이지에 개정 내용을 게시하고 시행일을 상단에 표시합니다. 중요한 변경이 있을 경우 크롬 웹스토어 업데이트 노트를 통해 별도 안내합니다.</p>
-  </div>
+<!-- Tiếng Việt -->
+<div class="lang-content" id="lang-vi">
+  <h1 class="page-title">Chính Sách Quyền Riêng Tư</h1>
+  <p class="effective-date">Ngày hiệu lực: 14 tháng 6 năm 2026</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer không thu thập thông tin nhận dạng cá nhân. Tất cả dữ liệu thu thập đều là số liệu thống kê công khai của kênh và video YouTube, chỉ được sử dụng để cung cấp tính năng phân tích.</p></div></div>
+  <div class="section"><h2>1. Dữ liệu chúng tôi thu thập</h2><ul><li>Dữ liệu công khai YouTube: tên kênh, người đăng ký, tiêu đề video, lượt xem, lượt thích, bình luận, hình thu nhỏ, ngày tải lên</li><li>Dữ liệu ảnh chụp: tiêu đề, hình thu nhỏ và số lượt xem tại thời điểm truy cập</li><li>Dữ liệu cài đặt: ID kênh của tôi, ID kênh so sánh, trạng thái Pro, khóa bản quyền</li></ul></div>
+  <div class="section"><h2>2. Liên hệ</h2><div class="contact-box"><p>Email: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>Thời gian phản hồi: 3–5 ngày làm việc</p></div></div>
+</div>
 
-  <div class="section">
-    <h2>10. 문의</h2>
-    <div class="contact-box">
-      <p>개인정보 관련 문의, 데이터 삭제 요청, 기타 사항은 아래로 연락해 주세요.</p>
-      <br>
-      <p>이메일: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p>
-      <p>응답 기간: 영업일 기준 3~5일 이내</p>
-    </div>
-  </div>
+<!-- Bahasa Indonesia -->
+<div class="lang-content" id="lang-id">
+  <h1 class="page-title">Kebijakan Privasi</h1>
+  <p class="effective-date">Tanggal berlaku: 14 Juni 2026</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer tidak mengumpulkan informasi yang dapat mengidentifikasi pribadi. Semua data yang dikumpulkan adalah statistik publik saluran dan video YouTube, digunakan hanya untuk menyediakan fitur analitik.</p></div></div>
+  <div class="section"><h2>1. Data yang Kami Kumpulkan</h2><ul><li>Data publik YouTube: nama saluran, pelanggan, judul video, penayangan, suka, komentar, thumbnail, tanggal unggah</li><li>Data snapshot: judul, thumbnail, dan jumlah tayangan saat kunjungan</li><li>Data pengaturan: ID saluran saya, ID saluran pembanding, status Pro, kunci lisensi</li></ul></div>
+  <div class="section"><h2>2. Kontak</h2><div class="contact-box"><p>Email: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>Waktu respons: 3–5 hari kerja</p></div></div>
+</div>
+
+<!-- Deutsch -->
+<div class="lang-content" id="lang-de">
+  <h1 class="page-title">Datenschutzerklärung</h1>
+  <p class="effective-date">Gültig ab: 14. Juni 2026</p>
+  <div class="section"><div class="highlight-box"><p>YT Analyzer erhebt keine personenbezogenen Daten. Alle gesammelten Daten sind öffentlich zugängliche Kanal- und Videostatistiken von YouTube, die ausschließlich zur Bereitstellung von Analysefunktionen verwendet werden.</p></div></div>
+  <div class="section"><h2>1. Erhobene Daten</h2><ul><li>Öffentliche YouTube-Daten: Kanalname, Abonnenten, Videotitel, Aufrufe, Likes, Kommentare, Miniaturbilder, Uploaddatum</li><li>Snapshot-Daten: Titel, Miniaturbild und Aufrufzahl zum Zeitpunkt des Besuchs</li><li>Einstellungsdaten: Meine Kanal-ID, Vergleichskanal-IDs, Pro-Status, Lizenzschlüssel</li></ul></div>
+  <div class="section"><h2>2. Kontakt</h2><div class="contact-box"><p>E-Mail: <a href="mailto:ytanalyzer.official@gmail.com">ytanalyzer.official@gmail.com</a></p><p>Antwortzeit: 3–5 Werktage</p></div></div>
+</div>
 
 </main>
 
 <footer>
-  © 2026 YT Analyzer &nbsp;·&nbsp; 본 방침은 크롬 웹스토어 정책, GDPR, 개인정보 보호법을 준수합니다
+  © 2026 YT Analyzer &nbsp;·&nbsp; <span id="footer-text"></span>
 </footer>
+
+<script>
+  const LANGS = {
+    ko: { name: '한국어', footer: 'Chrome Web Store 정책, GDPR, 개인정보 보호법 준수' },
+    en: { name: 'English', footer: 'Compliant with Chrome Web Store policies, GDPR, and applicable privacy laws' },
+    ja: { name: '日本語', footer: 'Chrome Web Storeポリシー、GDPR、個人情報保護法に準拠' },
+    zh: { name: '中文', footer: '符合Chrome网上应用店政策、GDPR及适用隐私法律' },
+    es: { name: 'Español', footer: 'Cumple con las políticas de Chrome Web Store, GDPR y leyes de privacidad aplicables' },
+    pt: { name: 'Português', footer: 'Em conformidade com as políticas da Chrome Web Store, GDPR e leis de privacidade aplicáveis' },
+    hi: { name: 'हिन्दी', footer: 'Chrome Web Store नीतियों, GDPR और लागू गोपनीयता कानूनों का अनुपालन' },
+    ar: { name: 'العربية', footer: 'متوافق مع سياسات Chrome Web Store وGDPR وقوانين الخصوصية المعمول بها' },
+    ru: { name: 'Русский', footer: 'Соответствует политикам Chrome Web Store, GDPR и применимым законам о конфиденциальности' },
+    fr: { name: 'Français', footer: 'Conforme aux politiques du Chrome Web Store, au RGPD et aux lois sur la confidentialité applicables' },
+    vi: { name: 'Tiếng Việt', footer: 'Tuân thủ chính sách Chrome Web Store, GDPR và luật bảo mật hiện hành' },
+    id: { name: 'Bahasa Indonesia', footer: 'Mematuhi kebijakan Chrome Web Store, GDPR, dan undang-undang privasi yang berlaku' },
+    de: { name: 'Deutsch', footer: 'Konform mit Chrome Web Store-Richtlinien, DSGVO und geltenden Datenschutzgesetzen' }
+  };
+
+  function detectLang() {
+    const nav = navigator.language || navigator.userLanguage || 'en';
+    const code = nav.toLowerCase().split('-')[0];
+    const map = { zh: 'zh', ja: 'ja', ko: 'ko', es: 'es', pt: 'pt', hi: 'hi', ar: 'ar', ru: 'ru', fr: 'fr', vi: 'vi', id: 'id', de: 'de' };
+    return map[code] || 'en';
+  }
+
+  function setLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const content = document.getElementById('lang-' + lang);
+    const btn = document.querySelector('[data-lang="' + lang + '"]');
+    if (content) content.classList.add('active');
+    if (btn) btn.classList.add('active');
+    document.documentElement.lang = lang;
+    document.getElementById('footer-text').textContent = LANGS[lang]?.footer || LANGS.en.footer;
+    localStorage.setItem('yta-privacy-lang', lang);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  const saved = localStorage.getItem('yta-privacy-lang');
+  setLang(saved || detectLang());
+</script>
 
 </body>
 </html>
