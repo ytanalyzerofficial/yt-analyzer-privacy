@@ -685,6 +685,23 @@
       block.classList.toggle("active", block.dataset.langBlock === lang);
     });
   });
+
+  // 페이지 로드 시 브라우저 언어를 감지해 해당 언어 탭으로 자동 전환
+  (function () {
+    const supportedLangs = ["ko", "en", "ja", "zh_CN", "es", "pt_BR", "hi", "ar", "ru", "fr", "vi", "id", "de"];
+    const browserLang = navigator.language || navigator.userLanguage || "en";
+
+    function detectLang() {
+      if (browserLang.toLowerCase().startsWith("zh")) return "zh_CN";
+      if (browserLang.toLowerCase().startsWith("pt")) return "pt_BR";
+      const short = browserLang.split("-")[0].toLowerCase();
+      return supportedLangs.includes(short) ? short : "en"; // 매칭 안 되면 영어로 대체
+    }
+
+    const detected = detectLang();
+    const btn = document.querySelector(`#langSwitch button[data-lang="${detected}"]`);
+    if (btn) btn.click();
+  })();
 </script>
 
 </body>
